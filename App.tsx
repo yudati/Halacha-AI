@@ -1,8 +1,4 @@
 
-
-
-
-
 import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Header from './components/Header';
@@ -517,9 +513,6 @@ function App() {
             isLoading={isLoading || isRabbiTyping}
             placeholders={searchPlaceholders}
           />
-          
-          <div className="my-5"></div>
-          <Disclaimer headingClass={headingFontClass} />
 
           <div className="mt-8">
             <AnimatePresence>
@@ -718,6 +711,9 @@ function App() {
             )}
           </div>
         </main>
+        <footer className="mt-12">
+          <Disclaimer headingClass={headingFontClass} />
+        </footer>
       </div>
       <AnimatePresence>
         {isSettingsOpen && <SettingsModal 

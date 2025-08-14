@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WarningIcon } from './Icon';
@@ -12,7 +13,7 @@ function Disclaimer({ headingClass }: DisclaimerProps) {
   const disclaimerText = t('disclaimerText');
   return (
     <motion.div
-      className="mt-6 p-5 bg-red-500/10 dark:bg-red-500/20 border-s-4 border-red-500 dark:border-red-400 text-red-800 dark:text-red-200 rounded-2xl shadow-lg"
+      className="p-5 bg-red-500/10 dark:bg-red-500/20 border-s-4 border-red-500 dark:border-red-400 text-red-800 dark:text-red-200 rounded-2xl shadow-lg"
       role="alert"
     >
       <div className="flex items-start gap-4">
