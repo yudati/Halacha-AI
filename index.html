@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>עוזר הלכתי</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0891b2" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&family=Cousine:wght@400;700&family=Frank+Ruhl+Libre:wght@400;700&family=Heebo:wght@400;700&family=IBM+Plex+Sans+Hebrew:wght@400;700;800&family=Noto+Serif+Hebrew:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                  primary: {
+                    50: 'hsl(var(--color-primary-50) / <alpha-value>)',
+                    100: 'hsl(var(--color-primary-100) / <alpha-value>)',
+                    200: 'hsl(var(--color-primary-200) / <alpha-value>)',
+                    300: 'hsl(var(--color-primary-300) / <alpha-value>)',
+                    400: 'hsl(var(--color-primary-400) / <alpha-value>)',
+                    500: 'hsl(var(--color-primary-500) / <alpha-value>)',
+                    600: 'hsl(var(--color-primary-600) / <alpha-value>)',
+                    700: 'hsl(var(--color-primary-700) / <alpha-value>)',
+                    800: 'hsl(var(--color-primary-800) / <alpha-value>)',
+                    900: 'hsl(var(--color-primary-900) / <alpha-value>)',
+                    950: 'hsl(var(--color-primary-950) / <alpha-value>)',
+                  }
+                },
+                fontFamily: {
+                    sans: ['Heebo', 'Assistant', 'sans-serif'],
+                    serif: ['Frank Ruhl Libre', 'serif'],
+                    mono: ['Cousine', 'monospace'],
+                    'heading-sans': ['IBM Plex Sans Hebrew', 'Assistant', 'sans-serif'],
+                    'heading-serif': ['Noto Serif Hebrew', 'Frank Ruhl Libre', 'serif'],
+                },
+            },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Heebo', 'Assistant', 'sans-serif';
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+      }
+      .font-sans {
+        font-family: 'Heebo', 'Assistant', 'sans-serif';
+      }
+      .font-serif {
+        font-family: 'Frank Ruhl Libre', serif;
+      }
+      .font-mono {
+        font-family: 'Cousine', monospace;
+      }
+      .font-heading-sans {
+        font-family: 'IBM Plex Sans Hebrew', 'Assistant', sans-serif;
+        font-weight: 700;
+      }
+      .font-heading-serif {
+        font-family: 'Noto Serif Hebrew', 'Frank Ruhl Libre', serif;
+        font-weight: 700;
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-fast {
+        animation: fade-in-fast 0.2s ease-out forwards;
+      }
+      @keyframes fade-in-fast {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-progress-indeterminate {
+        animation: progress-indeterminate 1.5s infinite ease-in-out;
+      }
+      @keyframes progress-indeterminate {
+        0% { transform: translateX(-100%) scaleX(0.5); }
+        50% { transform: translateX(0) scaleX(0.2); }
+        100% { transform: translateX(100%) scaleX(0.5); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.8.0",
+    "framer-motion": "https://esm.sh/framer-motion@^11.2.12"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
